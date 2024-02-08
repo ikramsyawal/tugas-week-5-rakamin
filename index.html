@@ -25,11 +25,11 @@
     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 
       <!-- register content -->
-      <h1>register</h1>
       <form>
         <div class="mb-3">
           <label for="namaInput" class="form-label">Nama</label>
           <input type="text" class="form-control" id="namaInput">
+          <div class="namaHelp text-secondary" class="form-text" >Nama minimal 10 Karakter</div>
         </div>
         <div class="mb-3">
           <label for="usiaInput" class="form-label">Usia</label>
@@ -39,18 +39,36 @@
         <div class="mb-3">
           <label for="uangSangu" class="form-label">Uang Sangu</label>
           <input type="text" class="form-control" id="uangSangu">
+          <div class="sanguHelp text-secondary" class="form-text" >Uang sangu minimal 100 ribu dan maksimal 1 juta</div>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button class="btn btn-primary">Submit</button>
       </form>
     </div>
 
     <!-- tabel list peserta -->
     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
       <h1>List Peserta</h1>
-      <table>
-        <thead>nama</thead>
-        <thead>Usia</thead>
-        <thead>Uang Sangu</thead>
+      <table class="table table-bordered">
+        <thead class="table">
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Nama Peserta</th>
+            <th scope="col">Usia</th>
+            <th scope="col">Uang Sangu</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>rata rata usia</td>
+            <td>rata rata uang sangu</td>
+          </tr>
+        </tfoot>
+
       </table>
     </div>
   </div>
