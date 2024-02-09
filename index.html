@@ -10,6 +10,7 @@
 </head>
 
 <body>
+  <!-- tabs -->
   <ul class ='nav  nav-pills nav-justified mb-3 mt-3 ms-3 me-3' id="pills-tab" role="tablist">
     <li class="nav-item" role="presentation">
       <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Register</button>
@@ -19,37 +20,38 @@
     </li>
   </ul>
 
+  <!-- tabs content -->
   <div class="tab-content ms-3 me-3" id="pills-tabContent">
 
     <!-- register form -->
     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 
       <!-- register content -->
-      <form>
+      <form id="myForm">
         <div class="mb-3">
           <label for="namaInput" class="form-label">Nama</label>
-          <input type="text" class="form-control" id="namaInput">
-          <div class="namaHelp text-secondary" class="form-text" >Nama minimal 10 Karakter</div>
+          <input type="text" class="form-control" id="namaInput" required>
+          <div class="text-secondary form-text">Nama minimal 10 Karakter</div>
         </div>
         <div class="mb-3">
           <label for="usiaInput" class="form-label">Usia</label>
-          <input type="text" class="form-control" id="usiaInput">
-          <div class="usiaHelp text-secondary" class="form-text" >Batas usia minimal 25 tahun</div>
+          <input type="text" class="form-control" id="usiaInput" required>
+          <div class="text-secondary form-text">Batas usia minimal 25 tahun</div>
         </div>
         <div class="mb-3">
           <label for="uangSangu" class="form-label">Uang Sangu</label>
-          <input type="text" class="form-control" id="uangSangu">
-          <div class="sanguHelp text-secondary" class="form-text" >Uang sangu minimal 100 ribu dan maksimal 1 juta</div>
+          <input type="text" class="form-control" id="uangSangu" required>
+          <div class="text-secondary form-text">Uang sangu minimal 100 ribu dan maksimal 1 juta</div>
         </div>
-        <button class="btn btn-primary">Submit</button>
+        <button value="Submit" type="button" class="btn btn-primary" onclick="addRow()" >Submit</button>
       </form>
     </div>
 
-    <!-- tabel list peserta -->
+    <!-- list peserta content -->
     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
       <h1>List Peserta</h1>
-      <table class="table table-bordered">
-        <thead class="table">
+      <table class="table table-bordered" id="table">
+        <thead">
           <tr>
             <th scope="col">No</th>
             <th scope="col">Nama Peserta</th>
@@ -57,20 +59,10 @@
             <th scope="col">Uang Sangu</th>
           </tr>
         </thead>
-        <tbody>
-
-        </tbody>
-        <tfoot>
-          <tr>
-            <td></td>
-            <td></td>
-            <td>rata rata usia</td>
-            <td>rata rata uang sangu</td>
-          </tr>
-        </tfoot>
-
       </table>
     </div>
+    
+    <!-- tabel list peserta -->
   </div>
 
 
