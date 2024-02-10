@@ -17,6 +17,9 @@ function submitData() {
             const newPeserta = new DataTable(name, age, money)
             listPeserta.push(newPeserta)
             isiTable()
+            setTimeout(function(){
+                alert('Data berhasil di input')
+            }, 2000)
         }else{
             alert('cek Nama, Usia, dan Uang Sangu anda apakah sudah memenuhi kriteria')
         }
