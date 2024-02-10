@@ -22,7 +22,7 @@ function submitData() {
 }
 
 function isiTable() {
-    const table = document.getElementById('table')
+    const table = document.getElementById('tableBody')
     const newRow = table.insertRow(-1)
 
     const cell0 = newRow.insertCell(0)
@@ -35,5 +35,24 @@ function isiTable() {
     cell2.innerHTML = listPeserta[listPeserta.length - 1].usia
     cell3.innerHTML = listPeserta[listPeserta.length - 1].uang
 
+    document.getElementById('ageAverage').innerHTML = ageAverage()
+    document.getElementById('uangAverage').innerHTML = uangAverage()
+
     document.getElementById('myForm').reset();
+}
+
+const ageAverage = () =>{
+    let age = 0
+    for(i = 0; i < listPeserta.length; i++){
+        age += parseInt(listPeserta[i].usia)
+    }
+    return age/listPeserta.length
+}
+
+const uangAverage = () =>{
+    let uang = 0
+    for (i=0; i < listPeserta.length; i++){
+        uang+=parseInt(listPeserta[i].uang)
+    }
+    return uang/listPeserta.length
 }
