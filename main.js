@@ -11,11 +11,16 @@ const listPeserta = []
 function submitData() {
     if (document.getElementById('myForm').checkValidity()) {
         const name = document.getElementById('namaInput').value
-        const age = document.getElementById('usiaInput').value
-        const money = document.getElementById('uangSangu').value
-        const newPeserta = new DataTable(name, age, money)
-        listPeserta.push(newPeserta)
-        isiTable()
+        const age = parseInt(document.getElementById('usiaInput').value)
+        const money = parseInt(document.getElementById('uangSangu').value)
+        if (name.length >= 10 && age >= 25 && money >= 100000) {
+            const newPeserta = new DataTable(name, age, money)
+            listPeserta.push(newPeserta)
+            isiTable()
+        }else{
+            alert('cek Nama, Usia, dan Uang Sangu anda apakah sudah memenuhi kriteria')
+        }
+
     } else {
         alert('Please fill in all required fields.')
     }
@@ -41,18 +46,18 @@ function isiTable() {
     document.getElementById('myForm').reset();
 }
 
-const ageAverage = () =>{
+const ageAverage = () => {
     let age = 0
-    for(i = 0; i < listPeserta.length; i++){
+    for (i = 0; i < listPeserta.length; i++) {
         age += parseInt(listPeserta[i].usia)
     }
-    return age/listPeserta.length
+    return age / listPeserta.length
 }
 
-const uangAverage = () =>{
+const uangAverage = () => {
     let uang = 0
-    for (i=0; i < listPeserta.length; i++){
-        uang+=parseInt(listPeserta[i].uang)
+    for (i = 0; i < listPeserta.length; i++) {
+        uang += parseInt(listPeserta[i].uang)
     }
-    return uang/listPeserta.length
+    return uang / listPeserta.length
 }
